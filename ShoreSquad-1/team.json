@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Sarah Chen",
+    "role": "Squad Leader",
+    "bio": "Environmental advocate with 5 years of beach cleanup experience",
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    "name": "Mike Rodriguez",
+    "role": "Community Coordinator",
+    "bio": "Marine biology student passionate about ocean conservation",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg"
+  }
+]

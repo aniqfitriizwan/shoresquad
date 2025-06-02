@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShoreSquad</title>
+    <title>ShoreSquad - Beach Cleanup Community</title>
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFjsNJp1o7mHnGLS5iP9VK_SdkDG-D9HY"></script>
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,16 +15,61 @@
         <p>Your go-to platform for beach cleanups and community engagement.</p>
     </header>
     <main>
-        <div id="mapContainer" style="width: 100%; height: 400px;"></div>
-        <section id="weatherInfo"></section>
-        <section id="crewList"></section>
-        <button id="joinCrewBtn">Join the Crew</button>
-        <button id="addCrewMemberBtn">Add Crew Member</button>
+        <section aria-labelledby="mapSectionHeader">
+            <h2 id="mapSectionHeader">Beach Cleanup Locations Map</h2>
+            <div id="mapContainer" style="width: 100%; height: 400px;"></div>
+        </section>
+        <section aria-labelledby="weatherSectionHeader">
+            <h2 id="weatherSectionHeader">Weather Tracker</h2>
+            <div id="weatherInfo"></div>
+        </section>
+        <section aria-labelledby="teamSectionHeader">
+            <h2 id="teamSectionHeader">Team Members</h2>
+            <div id="crewList"></div>
+            <button id="joinCrewBtn">Join the Crew</button>
+            <button id="addCrewMemberBtn">Add Crew Member</button>
+        </section>
+
+        <!-- Add Crew Member Modal -->
+        <div id="addMemberModal" class="modal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);align-items:center;justify-content:center;">
+          <div style="background:#fff;padding:2rem;border-radius:10px;max-width:400px;width:90%;position:relative;">
+            <button class="close-modal" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+            <h2 style="margin-top:0;">Add Crew Member</h2>
+            <form id="addMemberForm">
+              <label for="memberName">Name</label>
+              <input type="text" id="memberName" name="memberName" required style="width:100%;margin-bottom:1rem;">
+
+              <label for="memberRole">Role</label>
+              <input type="text" id="memberRole" name="memberRole" required style="width:100%;margin-bottom:1rem;">
+
+              <label for="memberBio">Bio</label>
+              <textarea id="memberBio" name="memberBio" required style="width:100%;margin-bottom:1rem;"></textarea>
+
+              <label>Choose Avatar</label>
+              <div id="avatarSelector" style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+                <div class="avatar-option selected" data-avatar="https://randomuser.me/api/portraits/men/32.jpg" style="border:2px solid #2196F3;border-radius:50%;padding:2px;cursor:pointer;">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar 1" style="width:48px;height:48px;border-radius:50%;">
+                </div>
+                <div class="avatar-option" data-avatar="https://randomuser.me/api/portraits/women/44.jpg" style="border:2px solid transparent;border-radius:50%;padding:2px;cursor:pointer;">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar 2" style="width:48px;height:48px;border-radius:50%;">
+                </div>
+                <div class="avatar-option" data-avatar="https://randomuser.me/api/portraits/men/65.jpg" style="border:2px solid transparent;border-radius:50%;padding:2px;cursor:pointer;">
+                  <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Avatar 3" style="width:48px;height:48px;border-radius:50%;">
+                </div>
+              </div>
+              <input type="hidden" id="memberAvatar" name="memberAvatar" value="https://randomuser.me/api/portraits/men/32.jpg">
+
+              <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                <button type="button" class="cancel-add" style="background:#eee;border:none;padding:0.5rem 1rem;border-radius:4px;">Cancel</button>
+                <button type="submit" style="background:#2196F3;color:#fff;border:none;padding:0.5rem 1rem;border-radius:4px;">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 ShoreSquad. All rights reserved.</p>
     </footer>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

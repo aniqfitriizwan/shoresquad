@@ -1,0 +1,36 @@
+{
+  "weather_icons": {
+    "sunny": {
+      "icon": "https://openweathermap.org/img/wn/01d@2x.png",
+      "description": "Sunny"
+    },
+    "partly_cloudy": {
+      "icon": "https://cdn-icons-png.flaticon.com/128/1146/1146869.png",
+      "description": "Partly cloudy"
+    },
+    "cloudy": {
+      "icon": "https://www.weatherapi.com/condition/64x64/day/119.png",
+      "description": "Cloudy"
+    },
+    "rain": {
+      "icon": "https://www.weatherapi.com/condition/64x64/day/296.png",
+      "description": "Rain"
+    },
+    "thunderstorm": {
+      "icon": "https://www.weatherapi.com/condition/64x64/day/389.png",
+      "description": "Thunderstorm"
+    },
+    "mist": {
+      "icon": "https://www.weatherapi.com/condition/64x64/day/143.png",
+      "description": "Mist"
+    },
+    "night_clear": {
+      "icon": "https://www.weatherapi.com/condition/64x64/night/113.png",
+      "description": "Clear night"
+    },
+    "default": {
+      "icon": "https://www.weatherapi.com/condition/64x64/day/116.png",
+      "description": "Weather condition"
+    }
+  }
+}
